@@ -1,0 +1,4 @@
+To run this project clone the repositry
+run node app.js
+open html with liveserver
+open localhost:3000 on chrome

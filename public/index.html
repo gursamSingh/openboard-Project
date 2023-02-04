@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+        integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACoEBBAXAgGUFgQEtRkFBrQbBwe0HQgItR8KC7YgCwy2Iw0Nuh8LC74FAQFzAAAAAAAAAAAAAAAAAAAAAAAAAAA8CQiHnkhL/7FVWP+1WFv/vmBi/8dnaf/Pb3D/1HN0/9l4ef/Vfn//Riwr5QYEBAgAAAAAAAAAAAAAAAAAAAAAXxkcy/CblP//u6T//r2p//+8qP//vqv//7yo//+8qf//v6r//8O4/2NHR+MKBQQGAAAAAAAAAAAAAAAAOAAAAogzNen8xqz///XZ//ju2f/69OL/+/Tk///88f///vn///z4/+3h3f86Li6+AAAAAAAAAAAAAAAAAAAAADcAADOkT037/9O3///33/+dj4L/UU1J/46IjP/CsKv/6uDR/////v/NwcD/GQ0NgQAAAAAAAAAAAAAAAAAAAABLAQR6vWVb///evv//8dn/wrSj/1JYU/+Bp8D/G1en/1paev/v28n/pZGK+gMAAEUAAAAAAAAAAAAAAAAAAAAASQcLstJ3Y///5cP/8NrC/+nZwv+wp6f/jL/o/xev//8Bc9L/bXGi/2lIR+8AAAAZAAAAAAAAAAAAAAAAQAAAAmYSFNzjkXX//+3K/+fPtv/l0Lr/2sS2/1R9p/9s2ff/K87//wCa7P8NMW79AQADpwAAAAgAAAAAAAAAAD4AACyFISD1862L//vlxf/RuaT/xrKg/+3Ywf/Mvrn/Vouz/2zd8/9G8P//AcX7/wZRkP4DABDGAAAAHQAAAABDAAFimzcv/v7Bmf/eyK7/xa6a/9C/qP/Twq3/382z/7igm/9DaJv/ZM7r/1j9//8F3f//Amus/wAEIdoAAAA3TgIGmbpMOf/zwJj/1sKk/9C4nv/GlY3/y4eN/8eDjf/VkJT/1IKT/2Zbm/9Ys97/Yfb//xjf//9Dc6f/Dwks3FcKDcrKYUf/4L6Y/9O1l//Tlo3/8aKl//6ztP/+tLb//re5///Ewv/5uLr/g4C4/1Ou5f+t8vP/erDs/wYgbu19FRTvvnJT/8yihP/Ujof/96up//+3sv//trP//768///Gxf//2df///z6/+axvf83HFTlV329/Sdlyv8AAS2PhCEc/LZvWv/oq6D//8bA///Px///1M3//97X///m4f//7+n///r6/9CZrv5sGSuvIAANBgAAb3AAA1uPAAAbAokKCd+sQUD+x2Vk/cJkZvzBZmv8vmdw+79qdfu9aXb6wW5/+6ZWa/I7Bg98AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4A8AAMAHAADABwAAwAcAAMAHAADADwAAgA8AAIAHAACAAwAAgAEAAAAAAAAAAAAAAAAAAAANAAAAPwAA//8AAA==" rel="icon" type="image/x-icon" />
+
+    <link rel="stylesheet" href="style.css">
+    <title>Openboard_Clone</title>
+</head>
+
+<body>
+    <div class="options-cont scale-tools">
+        <i class="fa fa-bars"></i>
+    </div>
+
+    <div class="tools-cont scale-tools">
+        <i class="pencil fas fa-pencil-alt"></i>
+        <i class="eraser fas fa-eraser"></i>
+        <i class="download fas fa-file-download"></i>
+        <i class="upload fas fa-file-upload"></i>
+        <i class="stickyNote far fa-sticky-note"></i>
+        <i class="undo fas fa-undo"></i>
+        <i class="redo fas fa-redo"></i>
+    </div>
+
+    <div class="pencil-tool-cont">
+        <div class="pencil-width-cont">
+            <input type="range" min="2" max="10" value="3" class="pencil-width">
+        </div>
+        <div class="pencil-color-cont">
+            <div class="black pencil-color"></div>
+            <div class="red pencil-color"></div>
+            <div class="blue pencil-color"></div>
+        </div>
+    </div>
+
+
+    <div class="eraser-tool-cont">
+        <input type="range" min="2" max="50" value="3" class="eraser-width">
+    </div>
+    <canvas></canvas>
+
+
+    <!-- <div class="sticky-cont">
+        <div class="sticky-header">
+            <div class="minimize"></div>
+            <div class="remove"></div>
+        </div>
+        <div class="sticky-note">
+            <textarea></textarea>
+        </div>
+    </div> -->
+
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js" integrity="sha384-/KNQL8Nu5gCHLqwqfQjA689Hhoqgi2S84SNUxC3roTe4EhJ9AfLkp8QiQcU8AMzI" crossorigin="anonymous"></script>
+    
+    <script>
+        let socket = io.connect("http://localhost:3000/");
+    </script>
+    <script src="./tools.js"></script>
+    <script src="./canvas.js"></script>
+</body>
+
+</html>
