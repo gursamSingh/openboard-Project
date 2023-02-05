@@ -1,23 +1,17 @@
 {
-    "name": "openboard_clone",
-    "version": "1.0.0",
-    "description": "",
-    "main": "app.js",
-    "engines": {
-      "node":"16.13.0",
-      "npm":"8.1.0"
-    },
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node app.js"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "express": "^4.18.2",
-      "nodemon": "^2.0.20",
-      "socket.io": "^4.5.4"
-    }
+    "version": 2,
+    "builds": [
+      {
+        "src": "./app.js",
+        "use": "@npm/node"
+      }
+    ],
+    "routes": [
+      {
+        // Specify which paths will route to a destination using a regex
+        "src": "/(.*)",
+        // Specify the paths' destination
+        "dest": "./app.js"
+      }
+    ]
   }
-  
