@@ -7,7 +7,7 @@ const app = express(); // initialize and setup the server ready
 app.use(express.static("public")); // display the htm contents on the url
 
 
-let port = process/env.port || 3000;
+let port = process.env.PORT || 3000;
 let server = app.listen(port, ()=>{
     console.log("Listening to port" + port);
 })
